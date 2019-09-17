@@ -2,7 +2,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "ssm/version"
 
 Gem::Specification.new do |s|
-  s.name = "ssm"
+  s.name = "simple-state-machine"
   s.version = SSM::VERSION
   s.authors = ["Michael Choi", "Si Le"]
   s.email = "mchoi@jiffyondemand.com"
