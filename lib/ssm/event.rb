@@ -18,11 +18,11 @@ module SSM
         false
       end
 
-      def transition!(resource, to:, &block)
+      def transition!(resource, to:, validate: true, &block)
         @from = resource.state
         ActiveRecord::Base.transaction do
           resource.state = to
-          resource.save!
+          resource.save!(validate: validate)
           yield if block_given?
         end
       rescue ActiveRecord::RecordInvalid
